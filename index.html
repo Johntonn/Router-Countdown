@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+		<meta name="description" content="Black Desert Trader Route Timer">
+		<meta name="keywords" content="Black Desert, Trade, Route, Timer">
+		<link href="./css/style.css" rel="stylesheet" type="text/css">
+		<title>
+			Trade Route Timer - Black Desert
+		</title>
+	</head>
+
+	<body>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/myscript.js"></script>
+
+		<!-- BEGIN CONTENT -->
+		<div class="container">
+			<div>
+				<table cellpadding="5" cellspacing="15">
+
+					<!-- Cabeçalho BEGIN -->
+					<tr>
+						<th>Heidel</th>
+						<th>Calpheon</th>
+						<th>Keplan</th>
+						<th>Glish</th>
+					</tr>
+					<!-- Cabeçalho END -->
+
+					<tr>
+						<th>
+							<input type="button" name="" value="Heidel" disabled class="semRota"> 
+						</th>
+						<th>
+							<input type="button" name="Calpheon_Heidel" value="Heidel" onClick="convertRota('Calpheon_Heidel')"> 
+						
+						</th>
+						<th>
+							<input type="button" name="Keplan_Heidel" value="Heidel" onClick="convertRota('Keplan_Heidel')"> 
+						
+						</th>
+						<th>
+							<input type="button" name="" value="Heidel" disabled class="semRota">				
+						</th>
+
+					</tr>
+
+					<tr>
+						<th>
+							<input type="button" name="Heidel_Calpheon" value="Calpheon" onClick="convertRota('Heidel_Calpheon')"> 
+						
+						</th>
+						<th>
+							<input type="button" name="" value="Calpheon" disabled class="semRota">				
+						</th>
+						<th>
+							<input type="button" name="" value="Calpheon" disabled class="semRota">
+						</th>
+						<th>
+							<input type="button" name="Glish_Calpheon" value="Calpheon" onClick="convertRota('Glish_Calpheon')">						
+						</th>
+					</tr>
+
+					<tr>
+						<th>
+							<input type="button" name="Heidel_Glish" value="Glish" onClick="convertRota('Heidel_Glish')"> 					
+						</th>
+						<th>
+							<input type="button" name="Calpheon_Glish" value="Glish" onClick="convertRota('Calpheon_Glish')"> 					
+						</th>
+						<th>
+							<input type="button" name="" value="Glish" disabled class="semRota"> 
+						</th>
+						<th>
+							<input type="button" name="" value="Glish" disabled class="semRota"> 
+						
+						</th>
+					</tr>
+					<tr>
+						<th>
+							<input type="button" name="Heidel_Keplan" value="Keplan" onClick="convertRota('Heidel_Keplan')"> 
+						
+						</th>
+						<th>
+							<input type="button" name="Calpheon_Keplan" value="Keplan" onClick="convertRota('Calpheon_Keplan')"> 
+						
+						</th>
+						<th>
+							<input type="button" name="" value="Keplan" disabled class="semRota">
+						</th>
+						<th>
+							<input type="button" name="" value="Keplan" disabled class="semRota">				
+						</th>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<input type="checkbox" name="m_alerta" id="m_alerta"> Aviso por mensagem<br><br>
+				<span class="rota">Origem: -<br>Destino: -<br></span>
+				<span class="countdown">00:00</span>
+			</div>			
+			<div>
+				<table>
+					<h5>SERVIDOR</h5>
+					<input type="text" name="serv" id="serv">
+					<button onclick="getServidor()">Salvar </button>  
+					<button onclick="editServidor()"> Editar</button><br><br>
+					<span id="servidor"></span>
+				</table>
+			</div>
+		</div>
+		<!-- END CONTENT -->
+
+	</body>
+
+</html>
