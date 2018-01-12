@@ -6,6 +6,7 @@
 		<meta name="description" content="Black Desert Trader Route Timer">
 		<meta name="keywords" content="Black Desert, Trade, Route, Timer">
 		<link href="./css/style.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 		<title>
 			Trade Route Timer - Black Desert
 		</title>
@@ -18,11 +19,12 @@
 
 		<!-- BEGIN CONTENT -->
 		<div class="container">
-			<div>
+			<!-- BEGIN cont_table -->
+			<div class="cont_table">
 				<table cellpadding="5" cellspacing="15">
 
 					<!-- Cabeçalho BEGIN -->
-					<tr>
+					<tr id="cabecalho">
 						<th>Heidel</th>
 						<th>Calpheon</th>
 						<th>Keplan</th>
@@ -96,13 +98,14 @@
 						</th>
 					</tr>
 				</table>
-			</div>
-			<div>
 				<input type="checkbox" name="m_alerta" id="m_alerta"> Aviso por mensagem<br><br>
+			</div>
+			<!-- END cont_table -->
+			<div class="timer_display">				
 				<span class="rota">Origem: -<br>Destino: -<br></span>
 				<span class="countdown">00:00</span>
 			</div>			
-			<div>
+			<div class="servidores">
 				<table>
 					<h5>SERVIDOR</h5>
 					<input type="text" name="serv" id="serv">

@@ -1,0 +1,99 @@
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background: url(../images/pexels-photo-532563.jpeg) no-repeat center center;
+	font-family: 'Poppins', sans-serif;
+}
+
+.container {
+	margin: 0px auto;
+	padding: 0px;
+	width: 720px;
+	height: 660px;
+
+	/*background-color: #def;*/
+	/*background: url(../images/pexels-photo-532563.jpeg) no-repeat bottom center;*/
+}
+
+.cont_table {
+	position: relative;
+
+	margin: 0px;
+	padding: 0px;
+	padding-left: 10px;
+
+	top: 50px;
+	left: -8%;
+
+	width: 68%;
+
+	/*background-color: #e2e2e2;
+	border-radius: 6px;
+	border: 2px solid #aaa;*/
+
+	/*border: solid 1px;
+	box-shadow: 2px 2px 2px #444;*/
+}
+
+.cont_table tr:first-child {
+	font-size: 20pt;
+	color: white;
+}
+
+th {
+	padding-left: 50px;
+}
+
+.cont_table input[type="checkbox"] {
+
+	margin-left: 14%;
+}
+
+.cont_table input[type="button"] {
+
+	width: 85px;
+}
+
+.timer_display {
+
+	position: relative;
+	top: 80px;
+	left: 40%;
+	font-size: 18pt;
+
+	width: 250px;
+
+}
+
+.timer_display .rota {
+
+	position: relative;
+	right: 25%;
+	font-size: 20pt;
+
+	color: white;
+	text-shadow: 1px 1px 1px #222;
+
+}
+
+.timer_display .countdown {
+	position: relative;
+	top: 20px;
+	left: 10px;
+	font-size: 25pt;
+	font-weight: bold;
+
+	text-shadow: 1px 1px 1px #444;
+	color: #6faa16;
+}
+
+
+.servidores {
+
+	position: relative;
+	bottom: 418px;
+	left: 700px;
+	width: 280px;
+	font-size: 18pt;
+}

@@ -6,7 +6,7 @@ const Heidel_Glish = "5:35";
 const Heidel_Keplan = "8:45";
 
 const Calpheon_Glish = "13:20";
-const Calpheon_Heidel = "12:25";
+const Calpheon_Heidel = "12:35";
 const Calpheon_Keplan = "07:05";
 
 const Keplan_Heidel = "9:45";
@@ -31,7 +31,7 @@ $(document).ready(function() {
 
 var timer2 = "";
 
-// interval definida fora da função para no bugar o clearInterval()
+// interval definida fora da função para nao bugar o clearInterval()
 var interval;
 
 function convertRota(rota) {
