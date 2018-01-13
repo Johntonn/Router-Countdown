@@ -2,14 +2,14 @@
 //********************************************
 // Definição de tempo por rota (em Minutos)
 const Heidel_Calpheon = "12:00";
-const Heidel_Glish = "5:35";
-const Heidel_Keplan = "8:45";
+const Heidel_Glish = "05:35";
+const Heidel_Keplan = "08:45";
 
 const Calpheon_Glish = "13:20";
-const Calpheon_Heidel = "12:35";
+const Calpheon_Heidel = "12:45";
 const Calpheon_Keplan = "07:05";
 
-const Keplan_Heidel = "9:45";
+const Keplan_Heidel = "09:45";
 
 const Glish_Calpheon = "13:30";
 // End definição de tempo por rota (em Minutos)
@@ -114,23 +114,38 @@ function convertRota(rota) {
 			break;
 	}
 
+	// Pega o valor em segundos do tempo total
+	var tempoTotal = convertTempo(timer2);
+
+	// Mostra na tela Origem, Destino
 	$(".rota").html("Origem: " + origem + "<br>Destino: " + destino + "<br>");
 
-	// Inicia Cronômetro
-	interval = setInterval(function() {
+	$('.countdown').html(timer2);
 
-	  var timer = timer2.split(':');
+	  // Inicia Cronômetro
+	  interval = setInterval(function() {
 
-	  //by parsing integer, I avoid all extra string processing
+	  // Separa minuto e segundo
+	  var timer = timer2.split(':');	
+
 	  var minutes = parseInt(timer[0], 10);
-	  var seconds = parseInt(timer[1], 10);
+	  var seconds = parseInt(timer[1], 10);	  
 
 	  --seconds;
 
-	  minutes = (seconds < 0) ? --minutes : minutes;
+	  // Ajusta formatação dos minutos
+	  minutes = (minutes < 10) ? '0' + minutes : minutes;
+
+	  if (seconds < 0) {
+	  	--minutes;
+	  	minutes = '0' + minutes;
+	  }
+	  else {
+	  	minutes;
+	  }
 
 	  // Verifica término de tempo do cronômetro caso minutes seja negativo
-	  if (minutes < 0) {
+	  if ((minutes == '0-1')) {
 
 	  	clearInterval(interval);
 
@@ -160,6 +175,11 @@ function convertRota(rota) {
 	  $('.countdown').html(minutes + ':' + seconds);
 
 	  timer2 = minutes + ':' + seconds;
+
+	  var tempoParcial = convertTempo(timer2);
+
+	  // Atualiza barra de progresso
+	  var progresso = barraProgresso(tempoTotal, tempoParcial);
 
 	}, 1000);
 
@@ -219,3 +239,39 @@ $(function() {
 	);
 });
 */
+
+// Converte tempo total da contagem de minutos para tempo em segundos
+function convertTempo(tempo) {
+
+	var segTotal = tempo.split(":");
+	var minutes = parseInt(segTotal[0], 10);
+	var seconds = parseInt(segTotal[1], 10);
+
+	var total = (minutes*60)+seconds;
+
+	return total;
+}
+
+// Atualiza Barra de Progresso
+function barraProgresso(tempoT, tempoP) {
+
+	// Valor em porcentagem reverso a passagem do tempo
+	var calc = 100 - ((tempoP * 100) / tempoT);
+
+	// Atualiza valor do width no css
+	$(".myBar").css("width", calc.toFixed(0) + "%");
+
+	if (calc.toFixed(0) >= 100) {
+
+		$(".porcento").html("Concluído");
+		$(".porcento").css("left", 35 + "%");
+
+	}
+	else {
+
+		// Atualiza valor da porcetagem no html
+		$(".porcento").html(calc.toFixed(0) + "%");
+		$(".porcento").css("left", 46 + "%");
+
+	}
+}
