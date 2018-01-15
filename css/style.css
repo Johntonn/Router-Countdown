@@ -57,8 +57,8 @@ th {
 
 .timer_display {
 
-	position: relative;
-	top: 80px;
+	position: absolute;
+	top: 420px;
 	left: 40%;
 	font-size: 18pt;
 
@@ -92,18 +92,18 @@ th {
 
 .servidores {
 
-	position: relative;
-	bottom: 418px;
-	left: 700px;
+	position: absolute;
+	bottom: 63%;
+	left: 76%;
 	width: 280px;
 	font-size: 18pt;
 }
 
 /* Barra de Progresso */
 .barra_progresso {
-	position: relative;
-	bottom: 100px;
-	left: 230px;
+	position: absolute;
+	bottom: 10%;
+	left: 35.5%;
 
 	width: 240px;
 	height: 30px;
