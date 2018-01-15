@@ -2,16 +2,19 @@
 //********************************************
 // Definição de tempo por rota (em Minutos)
 const Heidel_Calpheon = "12:00";
-const Heidel_Glish = "05:35";
-const Heidel_Keplan = "08:45";
+const Heidel_Glish = "5:35";
+const Heidel_Keplan = "8:45";
 
 const Calpheon_Glish = "13:20";
 const Calpheon_Heidel = "12:45";
-const Calpheon_Keplan = "07:05";
+const Calpheon_Keplan = "7:05";
+const Calpheon_Tarif = "17:20";
 
-const Keplan_Heidel = "09:45";
+const Keplan_Heidel = "9:45";
 
 const Glish_Calpheon = "13:30";
+
+const Tarif_Calpheon = "17:20";
 // End definição de tempo por rota (em Minutos)
 //*********************************************
 
@@ -95,6 +98,15 @@ function convertRota(rota) {
 			var destino = route[1];
 			break;
 
+		case "Calpheon_Tarif":
+			timer2 = Calpheon_Tarif;
+
+			// Separa rota origem e destino
+			var route = rota.split("_");
+			var origem = route[0];
+			var destino = route[1];
+			break;			
+
 		case "Keplan_Heidel":
 			timer2 = Keplan_Heidel;
 
@@ -112,6 +124,15 @@ function convertRota(rota) {
 			var origem = route[0];
 			var destino = route[1];
 			break;
+
+		case "Tarif_Calpheon":
+			timer2 = Tarif_Calpheon;
+
+			// Separa rota origem e destino
+			var route = rota.split("_");
+			var origem = route[0];
+			var destino = route[1];
+			break;
 	}
 
 	// Pega o valor em segundos do tempo total
@@ -120,7 +141,7 @@ function convertRota(rota) {
 	// Mostra na tela Origem, Destino
 	$(".rota").html("Origem: " + origem + "<br>Destino: " + destino + "<br>");
 
-	$('.countdown').html(timer2);
+	//$('.countdown').html(timer2);
 
 	  // Inicia Cronômetro
 	  interval = setInterval(function() {
@@ -134,18 +155,20 @@ function convertRota(rota) {
 	  --seconds;
 
 	  // Ajusta formatação dos minutos
-	  minutes = (minutes < 10) ? '0' + minutes : minutes;
+	  //minutes = (minutes < 10) ? '0' + minutes : minutes;
+	   minutes = (seconds < 0) ? --minutes : minutes;
 
+	  /*
 	  if (seconds < 0) {
 	  	--minutes;
 	  	minutes = '0' + minutes;
 	  }
 	  else {
 	  	minutes;
-	  }
+	  }*/
 
 	  // Verifica término de tempo do cronômetro caso minutes seja negativo
-	  if ((minutes == '0-1')) {
+	  if (minutes < 0) {
 
 	  	clearInterval(interval);
 
@@ -160,7 +183,7 @@ function convertRota(rota) {
 
 			alert("Tempo do cronômetro finalizado!");
 		}
-
+		
 		// Exit;	
 		return;
 	  }
