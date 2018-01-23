@@ -4,17 +4,19 @@
 const Heidel_Calpheon = "12:00";
 const Heidel_Glish = "5:35";
 const Heidel_Keplan = "8:45";
+const Heidel_Tarif = "6:30";
 
 const Calpheon_Glish = "13:20";
 const Calpheon_Heidel = "12:45";
 const Calpheon_Keplan = "7:05";
-const Calpheon_Tarif = "17:20";
+const Calpheon_Tarif = "17:30";
 
 const Keplan_Heidel = "9:45";
 
 const Glish_Calpheon = "13:30";
 
-const Tarif_Calpheon = "17:20";
+const Tarif_Heidel = "6:30";
+const Tarif_Calpheon = "17:30";
 // End definição de tempo por rota (em Minutos)
 //*********************************************
 
@@ -127,6 +129,24 @@ function convertRota(rota) {
 
 		case "Tarif_Calpheon":
 			timer2 = Tarif_Calpheon;
+
+			// Separa rota origem e destino
+			var route = rota.split("_");
+			var origem = route[0];
+			var destino = route[1];
+			break;
+
+		case "Heidel_Tarif":
+			timer2 = Heidel_Tarif;
+
+			// Separa rota origem e destino
+			var route = rota.split("_");
+			var origem = route[0];
+			var destino = route[1];
+			break;
+
+		case "Tarif_Heidel":
+			timer2 = Tarif_Heidel;
 
 			// Separa rota origem e destino
 			var route = rota.split("_");
